@@ -12,7 +12,7 @@ tupla = ()
 for i in range(0,5):
     lista_aux = []
     for j in range(0,2):
-        x = random.randint(0,100)
+        x = random.randint(0,10)
         lista_aux.append(x)
     tupla = lista_aux
     tupla = tuple(tupla)
