@@ -1,17 +1,22 @@
+import random
+
 def esPar(tupla):
     par = True
     for i in tupla:
         if par == True and i%2 != 0:
             par = False
     return par
-
-tupla1 = (1,2,3,4,5,6,7,8,9)
-tupla2 = (2,4,6,8,10)
-tupla3 = (20,30,40,50)
-tupla4 = (33,34,35,36)
-lista = [tupla1,tupla2,tupla3,tupla4]
+lista = []
 listafinal = []
-
+tupla = ()
+for i in range(0,5):
+    lista_aux = []
+    for j in range(0,2):
+        x = random.randint(0,100)
+        lista_aux.append(x)
+    tupla = lista_aux
+    tupla = tuple(tupla)
+    lista.append(tupla)
 for i in lista:
     if esPar(i):
         listafinal.append(i)
