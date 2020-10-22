@@ -6,8 +6,15 @@ def esPar(tupla):
         if par == True and i%2 != 0:
             par = False
     return par
+
+def organizarTuplas(lista):
+    listafinal = []
+    for i in lista:
+        if esPar(i):
+            listafinal.append(i)
+    return listafinal
+
 lista = []
-listafinal = []
 tupla = ()
 for i in range(0,5):
     lista_aux = []
@@ -17,7 +24,5 @@ for i in range(0,5):
     tupla = lista_aux
     tupla = tuple(tupla)
     lista.append(tupla)
-for i in lista:
-    if esPar(i):
-        listafinal.append(i)
-print(listafinal)
+
+print(organizarTuplas(lista))
