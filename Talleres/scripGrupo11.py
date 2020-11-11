@@ -5,7 +5,7 @@ def genCiclosHamiltoneanos(G,nodo,lista,nodos,nodoInicial):
         if len(lista) < (len(G)-1):
             if i:
                 if cont not in lista and cont != nodos:
-                    if cont not in lista or len(lista) == 3:
+                    if cont not in lista:
                         if nodo not in lista:
                             lista.append(nodo)
                         nodos = -1
