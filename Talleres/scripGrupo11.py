@@ -1,4 +1,5 @@
 #Taller 1 
+#Busca todos los ciclos Hamiltoneanos de un grafo
 def genCiclosHamiltoneanos(G,nodo,camino,nodoInicial):
     cont = 0
     for i in G[nodo]:
@@ -11,12 +12,14 @@ def genCiclosHamiltoneanos(G,nodo,camino,nodoInicial):
             yield from genCiclosHamiltoneanos(G,cont,camino + [cont],nodoInicial)
         cont += 1
 
+#Comprueba que el ciclo es Hamiltoneano
 def esHamiltoneano(G,camino,nodo,nodoInicial):
     posicionFinal = G[nodo]
     posicionInicial =G[nodoInicial]
     if len(camino) == (len(G)-1) and posicionFinal[nodoInicial]==True and posicionInicial[nodo]== True:
         return True
 
+#Comprueba que dos vertices del grafo son adyacentes
 def esAdyacente(G,nodo1,nodo2):
     posicionNodo1 = G[nodo1]
     posicionNodo2 = G[nodo2]
