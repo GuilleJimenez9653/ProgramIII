@@ -18,6 +18,8 @@ def esHamiltoneano(G,camino,nodo,nodoInicial):
     posicionInicial =G[nodoInicial]
     if len(camino) == (len(G)-1) and posicionFinal[nodoInicial]==True and posicionInicial[nodo]== True:
         return True
+    else:
+        return False
 
 #Comprueba que dos vertices del grafo son adyacentes
 def esAdyacente(G,nodo1,nodo2):
@@ -25,6 +27,8 @@ def esAdyacente(G,nodo1,nodo2):
     posicionNodo2 = G[nodo2]
     if posicionNodo1[nodo2] == True and posicionNodo2[nodo1] == True:
         return True
+    else:
+        return False
 
 G = [
     [False,True,True,False,True],
