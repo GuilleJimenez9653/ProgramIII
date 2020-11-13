@@ -1,31 +1,4 @@
 #Taller 1 
-def genCiclosHamiltoneanos1(G,nodo,lista,nodos,nodoInicial,listaAux):  
-    cont = 0
-    for i in G[nodo]:
-        if len(lista) < (len(G)-1) or nodo == nodoInicial:
-            if i:
-                if cont not in lista and cont != nodos:
-                    if cont not in lista:
-                        if nodo not in lista:
-                            lista.append(nodo)
-                        nodos = -1
-                        yield from genCiclosHamiltoneanos1(G,cont,lista,nodos,nodoInicial,listaAux)
-                else:
-                    cont +=1
-            else:
-                cont +=1       
-    if len(lista) != len(G):
-        posicionFinal = G[nodo]
-        posicionInicial =G[nodoInicial]
-        if posicionFinal[nodoInicial] == True and posicionInicial[nodo] == True and len(lista) == (len(G)-1):
-            lista.append(nodo)
-            yield lista
-        else:
-            nodos = lista.pop()
-            yield from genCiclosHamiltoneanos1(G,lista[len(lista)-1],lista,nodos,nodoInicial,listaAux)
-    else:
-        yield lista
-
 def genCiclosHamiltoneanos(G,nodo,camino,nodoInicial):
     cont = 0
     for i in G[nodo]:
@@ -57,12 +30,6 @@ G = [
     [False, True, False, False, True],
     [True,False, True, True, False]
 ]
-
-listaAux = []
-listaAux2 = []
-nodoFinal = -1
-#iterador = genCiclosHamiltoneanos1(G,0,listaAux,nodoFinal,0,listaAux2)
-#print(next(iterador))
 
 gen = genCiclosHamiltoneanos(G,0,[0],0)
 print(list(gen))
