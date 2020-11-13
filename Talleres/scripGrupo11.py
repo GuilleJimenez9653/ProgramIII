@@ -9,12 +9,11 @@ def genCiclosHamiltoneanos(G,nodo,lista,nodos,nodoInicial):
                         if nodo not in lista:
                             lista.append(nodo)
                         nodos = -1
-                        next(genCiclosHamiltoneanos(G,cont,lista,nodos,nodoInicial))
+                        yield from genCiclosHamiltoneanos(G,cont,lista,nodos,nodoInicial)
                 else:
                     cont +=1
             else:
-                cont +=1
-        #else:       
+                cont +=1       
     if len(lista) != len(G):
         nodoFinal = nodo
         posicionFinal = G[nodoFinal]
@@ -24,7 +23,7 @@ def genCiclosHamiltoneanos(G,nodo,lista,nodos,nodoInicial):
             yield lista
         else:
             nodos = lista.pop()
-            next(genCiclosHamiltoneanos(G,lista[len(lista)-1],lista,nodos,nodoInicial))
+            yield from genCiclosHamiltoneanos(G,lista[len(lista)-1],lista,nodos,nodoInicial)
     else:
         yield lista
 
