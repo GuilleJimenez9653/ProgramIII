@@ -6,7 +6,7 @@ class Tablero:
         self._tamano_j = tamano_j
 
     def get_tamano(self):
-        return self._tamano
+        return len(self._filas)
 
     def set_matriz(self):
         self._filas = []
@@ -27,4 +27,12 @@ class Tablero:
         t = Tablero()
         t.set_tamano(tamano_i,tamano_j)
 
-    #def ubicar_pieza(pieza, region):
+    def ubicar_pieza(self,pieza):
+        cont = 0
+        aux = 0
+        if pieza.get_direccion() == "Vertical":
+            lista_aux = self._filas[aux]
+            for i in pieza.get_valor():
+                lista_aux[cont] = i
+                cont+=1
+            self._filas[aux] = lista_aux

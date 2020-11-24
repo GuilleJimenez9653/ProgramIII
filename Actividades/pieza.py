@@ -17,8 +17,18 @@ class Pieza:
     
     def get_color(self):
         return self._color
+    
+    def set_direccion(self,direccion):
+        self._direccion = direccion
+    
+    def get_direccion(self):
+        return self._direccion
+
+    def get_pieza(self):
+        return self
 
     def mostrar(self):
         print('Valor:', self.get_valor())
         print('Forma:', self.get_forma())
         print('Color:', self.get_color())
+        print('Direccion:', self.get_direccion())
