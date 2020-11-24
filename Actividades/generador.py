@@ -1,5 +1,7 @@
 import pieza
 import random
+import tablero
+
 class Generador:
 
     def generar_pieza(self):
@@ -8,3 +10,4 @@ class Generador:
         p1.set_forma('rectangulo')
         p1.set_color('azul')
         return p1
+
